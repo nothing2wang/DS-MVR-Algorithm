@@ -51,15 +51,24 @@ for trial = 1:num_trial
     ops.max_it = iter_mttkrp*round(itt/bs);
     ops.out_iter = round(ops.max_it/50);
 
-    [ A_DS_M1_VR_t, MSE_DS_M1_VR_t, NRE_DS_M1_VR_t, TIME_DS_M1_VR_t] = DS_MVR(X_data,ops);
-    MSE_DSM1VR(trial,:)= MSE_DS_M1_VR_t;
-    NRE_DSM1VR(trial,:)= NRE_DS_M1_VR_t;
-    TIME_DSM1VR(trial,:)=TIME_DS_M1_VR_t;
-    P = ktensor(A_DS_M1_VR_t);
+    [ A_DS_MVR_t, MSE_DS_MVR_t, NRE_DS_MVR_t, TIME_DS_MVR_t] = DS_MVR(X_data,ops);
+    MSE_DSMVR(trial,:)= MSE_DS_MVR_t;
+    NRE_DSMVR(trial,:)= NRE_DS_MVR_t;
+    TIME_DSMVR(trial,:)=TIME_DS_MVR_t;
+    P = ktensor(A_DS_MVR_t);
     PP = tensor(P);
     A_DSM1VR = double(PP);
 
 end
 
-NRE_DS_M1VR = mean(NRE_DSM1VR,1)/prod(size(X_data));
+NRE_DS_MVR = mean(NRE_DSMVR,1)/prod(size(X_data));
 
+figure(101)
+semilogy([0:(size(NRE_DS_MVR,2)-1)],NRE_DS_MVR,'-p','linewidth',1.5,'color', [0,0,1],'MarkerIndices', 1:10:50);
+
+legend('DS-MVR');
+xlabel('Number of MTTKRP computed')
+ylabel('LOSS');
+axis([0 50, 2*10^(-4) 10^(-1)]);
+set(gca,'fontsize',14);
+grid on 
