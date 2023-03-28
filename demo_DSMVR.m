@@ -51,7 +51,7 @@ for trial = 1:num_trial
     ops.max_it = iter_mttkrp*round(itt/bs);
     ops.out_iter = round(ops.max_it/50);
 
-    [ A_DS_M1_VR_t, MSE_DS_M1_VR_t, NRE_DS_M1_VR_t, TIME_DS_M1_VR_t] = DS_MVR_re(X_data,ops);
+    [ A_DS_M1_VR_t, MSE_DS_M1_VR_t, NRE_DS_M1_VR_t, TIME_DS_M1_VR_t] = DS_MVR(X_data,ops);
     MSE_DSM1VR(trial,:)= MSE_DS_M1_VR_t;
     NRE_DSM1VR(trial,:)= NRE_DS_M1_VR_t;
     TIME_DSM1VR(trial,:)=TIME_DS_M1_VR_t;
