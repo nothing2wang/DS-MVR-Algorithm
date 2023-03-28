@@ -1,6 +1,7 @@
 function [ A, MSE_A ,NRE_A, TIME_A] = DS_MVR_re(X,ops)
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% CPD_DS_M1_VR:  double SGD+momentum-01 + variance reduction
+% DS-MVR:  Qingsong Wang, Chunfeng Cui, Deren Han. ``Accelerated doubly stochastic gradient 
+% descent for tensor CP decomposition''. Journal of Optimization Theory and Applications. Accept, 2023.
 % ============== input =====================================
 % X  : the data tensor
 % ops: algorithm parameters
