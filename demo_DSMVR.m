@@ -9,7 +9,7 @@ X_data = indian_pines;
 I_vec = size(X_data);
 % Problem setup
 X = {};              % Input tensor
-F = 30;            % Rank
+F = 20;            % Rank
 bs = 10;                  % Number of fibers
 iter_mttkrp = 50;         % Number of MTTKRP
 num_trial=2;                % Number of trials
