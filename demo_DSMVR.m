@@ -16,8 +16,8 @@ num_trial=2;                % Number of trials
 ops.b0_f = 0.15;             % stepsize of fixed algorithms
 ops.lambda = 0.1;           % parameter of regular terms
 ops.eta = 1;
-X_data = mapminmax(X_data(:)', 0, 1);
-X_data = reshape(X_data',I_vec(1),I_vec(2),I_vec(3));
+
+X_data = normed_data(X_data, 0, 1);
 X_data = tensor(X_data);
 
 for trial = 1:num_trial
@@ -63,9 +63,10 @@ end
 
 NRE_DS_MVR = mean(NRE_DSMVR,1)/prod(size(X_data));
 
+
+%%%%%%%% plot
 figure(101)
 semilogy([0:(size(NRE_DS_MVR,2)-1)],NRE_DS_MVR,'-p','linewidth',1.5,'color', [0,0,1],'MarkerIndices', 1:10:50);
-
 legend('DS-MVR');
 xlabel('Number of MTTKRP computed')
 ylabel('LOSS');
