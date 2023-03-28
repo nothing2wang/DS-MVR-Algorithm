@@ -1,7 +1,7 @@
 # DS-MVR-Algorithm
 Code for ``Accelerated Doubly Stochastic Gradient Descent for Tensor CP Decomposition''
-
-# requriments
+Updating .......
+# Requriments
 1. Tensor Toolbox for MATLAB (http://www.tensortoolbox.org/)
 2. Tensorlab (https://www.tensorlab.net/)
 
