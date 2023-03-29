@@ -49,7 +49,7 @@ for trial = 1:num_trial
     ops.n_mb = bs/2;
     itt = round(prod(size(X_data))/mean(size(X_data)));
     ops.max_it = iter_mttkrp*round(itt/bs);
-    ops.out_iter = round(ops.max_it/50);
+    ops.out_iter = round(ops.max_it/iter_mttkrp);
 
     [ A_DS_MVR_t, MSE_DS_MVR_t, NRE_DS_MVR_t, TIME_DS_MVR_t] = DS_MVR(X_data,ops);
     MSE_DSMVR(trial,:)= MSE_DS_MVR_t;
@@ -66,7 +66,7 @@ NRE_DS_MVR = mean(NRE_DSMVR,1)/prod(size(X_data));
 
 %%%%%%%% plot
 figure(101)
-semilogy([0:(size(NRE_DS_MVR,2)-1)],NRE_DS_MVR,'-p','linewidth',1.5,'color', [0,0,1],'MarkerIndices', 1:10:50);
+semilogy([0:(size(NRE_DS_MVR,2)-1)],NRE_DS_MVR,'-p','linewidth',1.5,'color', [0,0,1],'MarkerIndices', 1:iter_mttkrp/5:iter_mttkrp);
 legend('DS-MVR');
 xlabel('Number of MTTKRP computed')
 ylabel('LOSS');
