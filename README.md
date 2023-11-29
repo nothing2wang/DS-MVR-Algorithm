@@ -9,6 +9,7 @@ Updating .......
 
 
 # References
+Please cite our paper if you use any part of our code:
 
 Qingsong Wang, Chunfeng Cui, Deren Han. ``Accelerated doubly stochastic gradient descent for tensor CP
 decomposition''. Journal of Optimization Theory and Applications. 197, 665–704, 2023.
